@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  battlescribe-roster-parser:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+  redis:
+    image: "redis:alpine"

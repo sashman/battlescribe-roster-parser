@@ -1,8 +1,13 @@
-FROM ubuntu:16.04
-RUN apt-get update && apt-get install -y libgmp3-dev
-RUN mkdir /opt/app
-WORKDIR /opt/app
-COPY .stack-work/docker/_home/.local/bin .
-COPY models ./models
-CMD ["/opt/app/battlescribe-roster-parser"]
+FROM haskell:9.2.5
+RUN mkdir /app
+WORKDIR /app
+
+RUN stack update
+
+COPY . .
+RUN stack build --no-docker
+# RUN stack install --no-docker
+
+# COPY models ./models
+# CMD ["/opt/app/battlescribe-roster-parser"]
 
