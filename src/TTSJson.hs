@@ -7,6 +7,7 @@ import           Control.Arrow        (first)
 import           Control.Lens
 import           Data.Aeson
 import           Data.Aeson.Lens
+import qualified Data.Aeson.KeyMap    as KM
 import qualified Data.ByteString.Lazy as B
 import qualified Data.HashMap.Strict  as HM
 import qualified Data.Text            as T
@@ -51,7 +52,7 @@ loadModels = do
     let modelDir = currentDir </> "models"
     jsonPaths <- fmap (modelDir </>) <$> listDirectory modelDir
     jsonBytes <- traverse B.readFile (Debug.traceShowId jsonPaths)
-    let fullMappings = fmap (^. _Object) jsonBytes
+    let fullMappings = map KM.toHashMapText (fmap (^. _Object) jsonBytes)
     let downcasedKeys = map (HM.fromList . downcaseKeys . HM.toList) fullMappings
     return $ HM.unions downcasedKeys
 

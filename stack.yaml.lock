@@ -5,15 +5,26 @@
 
 packages:
 - completed:
-    hackage: servant-multipart-0.11.4@sha256:ef3ed65fc51ad73c5f27cda0bb65b5ff98496871a2b5625a00fe3bd67eddc569,2132
+    hackage: servant-multipart-0.12.1@sha256:1855cd45d6db96b294de3159802fdfec04332547e6c501b91508acc6821a967c,2028
     pantry-tree:
-      size: 333
-      sha256: a64d359ca5eacb41854e3909952ca8503a1654c4ae4bbdfeba2ffcbe5e3615c9
+      sha256: c4ec954a6ae4e37d9e86579f818aea93549c0709b6a2167f0ffa122a907b96d2
+      size: 332
   original:
-    hackage: servant-multipart-0.11.4
+    hackage: servant-multipart-0.12.1
+- completed:
+    commit: 085c16fb21b9f856a435a3faab980e7e0b319341
+    git: https://github.com/reach-sh/haskell-hexstring.git
+    name: hexstring
+    pantry-tree:
+      sha256: 9ecf67856f59dfb382b283eceb42e4fc1865935d1a7e59111556ed381c6a2ffd
+      size: 687
+    version: 0.11.1
+  original:
+    commit: 085c16fb21b9f856a435a3faab980e7e0b319341
+    git: https://github.com/reach-sh/haskell-hexstring.git
 snapshots:
 - completed:
-    size: 498365
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/13/18.yaml
-    sha256: c813b03544da8a9053b722f00f3f9a0aade23443130ac7160fefa89e01f5fb17
-  original: lts-13.18
+    sha256: 3770dfd79f5aed67acdcc65c4e7730adddffe6dba79ea723cfb0918356fc0f94
+    size: 648660
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/20/4.yaml
+  original: lts-20.4

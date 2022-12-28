@@ -1,3 +1,7 @@
 .stack-work/install/
 .stack-work/dist/
 stack.yaml.lock
+docker-compose.yaml
+Dockerfile
+frontend/
+tts/

@@ -110,7 +110,7 @@ asUrl base params =
 
 serverAddress localMode =
     if localMode then
-        "http://localhost:8080/roster"
+        "http://backend:8080/roster"
 
     else
         "https://battlescribe2tts-backend-ymofho42gq-uc.a.run.app/roster"

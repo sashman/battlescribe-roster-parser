@@ -6,8 +6,8 @@ RUN stack update
 
 COPY . .
 RUN stack build --no-docker
-# RUN stack install --no-docker
+RUN stack install --no-docker
 
-# COPY models ./models
-# CMD ["/opt/app/battlescribe-roster-parser"]
+COPY models ./models
+CMD ["battlescribe-roster-parser"]
 
