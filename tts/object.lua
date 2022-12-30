@@ -341,6 +341,7 @@ function spawnModelRecur(id, threads, limit, index)
     spawnThreadCounter = spawnThreadCounter + 1
     if spawnThreadCounter >= threads then
       broadcastToAll("Army creation complete!")
+      removePickedUpModels()
     end
   end
 end
@@ -399,7 +400,6 @@ function createArmy(player, value, id)
         end
       )
     end
-    removePickedUpModels()
   else
     broadcastToAll("Sorry, only the host of this game may use the Battlescribe Army Creator")
   end
@@ -408,6 +408,8 @@ end
 function removePickedUpModels() 
   broadcastToAll("Removing models", "Green")
   for i, obj in ipairs(allPickedUp) do
-    obj.destruct()
+    if obj then
+      obj.destruct()
+    end
   end
 end
