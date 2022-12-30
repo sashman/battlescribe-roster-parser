@@ -230,11 +230,11 @@ createScript ui uniqueId = [NI.text|
       end
       if index == 4 or index == 5 or index == 8 then
         local inc = index == 4 and 1 or -1
-        if index == 8 then
-          inc = 0
-        end
         if target.getVar("bs2tts-aura-circle") == nil then
           target.setVar("bs2tts-aura-circle", 0)
+        end
+        if index == 8 then
+          inc = target.getVar("bs2tts-aura-circle") * -1
         end
         local newRadius = math.max(target.getVar("bs2tts-aura-circle") + inc,0)
         target.setVar("bs2tts-aura-circle", newRadius)
