@@ -1,8 +1,8 @@
 ACTIVATED_BUTTON = "rgb(1,0.6,1)|rgb(1,0.4,1)|rgb(1,0.2,1)|rgb(1,0.2,1)"
 DEFAULT_BUTTON = "#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)"
-prodServerURL = "https://bs2tts2pwqnfvyw-bs2tts2-backend.functions.fnc.fr-par.scw.cloud/"
+prodServerURL = "https://bs2tts2pwqnfvyw-bs2tts2-backend.functions.fnc.fr-par.scw.cloud"
 serverURL = prodServerURL
-version = "1.9"
+version = "1.10"
 
 nextModelTarget = ""
 nextModelButton = ""
@@ -112,6 +112,7 @@ end
 
 pickedUp = {}
 timerId = nil
+allPickedUp = {}
 
 function onObjectPickUp(colorName, obj)
   if nextModelTarget ~= "" then
@@ -142,6 +143,7 @@ function processPickups()
     copy.States = nil
     copy.Width = width
     table.insert(modelList, copy)
+    table.insert(allPickedUp, obj)
   end
   print("Desc: " .. JSON.encode(descriptorMapping[nextModelTarget]))
   local data = {
@@ -296,7 +298,7 @@ function processNames(webReq)
     attributes = {
       width = widthInc * ((#buttonNames / colHeight) + 1),
       height = heightInc * colHeight,
-      position = tostring(xstart) .. " 0 -300"
+      position = tostring(xstart) .. " 0 -500"
     },
     children = newButtons
   }
@@ -397,7 +399,15 @@ function createArmy(player, value, id)
         end
       )
     end
+    removePickedUpModels()
   else
     broadcastToAll("Sorry, only the host of this game may use the Battlescribe Army Creator")
+  end
+end
+
+function removePickedUpModels() 
+  broadcastToAll("Removing models", "Green")
+  for i, obj in ipairs(allPickedUp) do
+    obj.destruct()
   end
 end
