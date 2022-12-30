@@ -151,7 +151,7 @@ createScript ui uniqueId = [NI.text|
    local index = baseMap[meshFile]
    local newIndex = (index + inc) % #validBaseMillis
    log("Base map index is now: " .. tostring(newIndex))
-   log("Base millis are: " .. tostring(validBaseMillis[newIndex+1]["x"]) .. " " .. tostring(validBaseMillis[newIndex+1]["z"]))
+   broadcastToAll("Setting base size to " .. tostring(validBaseMillis[newIndex+1]["x"]) .. "x" .. tostring(validBaseMillis[newIndex+1]["z"]) .. "mm")
    baseMap[meshFile] = newIndex
    Global.setTable("bs2tts-saved-bases", baseMap)
   end
