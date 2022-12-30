@@ -121,21 +121,34 @@ createScript ui uniqueId = [NI.text|
   timesActivated = 0
 
   validBaseMillis = {
+    -- Round
     {x = 25, z = 25},
+    {x = 28, z = 28},
     {x = 30, z = 30},
     {x = 32, z = 32},
     {x = 40, z = 40},
     {x = 50, z = 50},
     {x = 55, z = 55},
     {x = 60, z = 60},
+    {x = 65, z = 65},
+    {x = 90, z = 90},
     {x = 100, z = 100},
-    {x = 25, z = 25},
+    {x = 130, z = 130},
+    {x = 160, z = 160},
+    
+    -- Oval
     {x = 25, z = 75},
     {x = 75, z = 25},
     {x = 120, z = 92},
     {x = 92, z = 120},
     {x = 170, z = 105},
     {x = 105, z = 170},
+    {x = 170, z = 110},
+    {x = 110, z = 170},
+    {x = 75, z = 42},
+    {x = 42, z = 75},
+    {x = 105, z = 70},
+    {x = 70, z = 105}
   }
 
   function assignBase(inc, model)
