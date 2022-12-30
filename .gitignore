@@ -6,6 +6,7 @@ tts-examples
 !ads.txt
 *.testros.test
 frontend/elm-stuff/
+frontend/html/elm.js
 .vscode
 .stack-work
 tts/temp.lua

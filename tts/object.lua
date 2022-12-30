@@ -1,6 +1,6 @@
 ACTIVATED_BUTTON = "rgb(1,0.6,1)|rgb(1,0.4,1)|rgb(1,0.2,1)|rgb(1,0.2,1)"
 DEFAULT_BUTTON = "#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)"
-prodServerURL = "https://backend.battlescribe2tts.net"
+prodServerURL = "https://bs2tts2pwqnfvyw-bs2tts2-backend.functions.fnc.fr-par.scw.cloud/"
 serverURL = prodServerURL
 version = "1.9"
 

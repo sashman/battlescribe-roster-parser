@@ -1,4 +1,4 @@
-module Frontend exposing (main, view)
+module Main exposing (main, view)
 
 import Bootstrap.CDN as CDN
 import Bootstrap.Grid as Grid
@@ -113,7 +113,7 @@ serverAddress localMode =
         "http://backend:8080/roster"
 
     else
-        "https://battlescribe2tts-backend-ymofho42gq-uc.a.run.app/roster"
+        "https://bs2tts2pwqnfvyw-bs2tts2-backend.functions.fnc.fr-par.scw.cloud/roster"
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
