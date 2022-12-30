@@ -270,6 +270,9 @@ createScript ui uniqueId = [NI.text|
         assignBase(inc, target)
         onScriptingButtonDown(8, peekerColor)
       end
+      if index == 9 then
+        selectUnit(player)
+      end
     end
   end
 
@@ -374,6 +377,15 @@ createScript ui uniqueId = [NI.text|
     end
     local theid = self.getGUID() .. "-modelcount"
     UI.setAttribute(theid, "text", label )
+  end
+
+  function selectUnit(player) 
+    collectUnitModels()
+    if unitModels then
+      for k, model in pairs(unitModels) do
+        model.addToPlayerSelection(player.color)
+      end
+    end
   end
 
   function getCenterDist(obj)
